@@ -1,0 +1,17 @@
+{% extends "base1.html" %}
+{% block content %}
+<table class="w3-table-all w3-border"><caption>회원 목록</caption>
+<tr class=""><th>아이디</th><th>이름</th>
+<th>이메일</th><th>&nbsp;</th></tr>
+{% for m in mlist %}  {# mlist 리스트 객체 반복문 #}
+<tr><td><a href="../info/{{m.id}}/">{{m.id}}</a></td>
+<td>{{m.name}}</td>
+<td>{{m.email}}</td>
+<td><a href="../update/{{m.id}}/">[수정]</a>
+{% if m.id != 'admin' %}
+<a href="../delete/{{m.id}}/">[강제탈퇴]</a>
+{% endif %}
+</td></tr>
+{% endfor %} {#for 반복문 종료 #}
+</table>
+{% endblock content %}

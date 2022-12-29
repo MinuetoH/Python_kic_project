@@ -1,0 +1,32 @@
+{% extends "base1.html" %}
+{% block content %}
+<script type="text/javascript">
+   function  inputcheck(f) {
+   if(f.pass.value == "") {
+		   alert("비밀번호를 입력하세요");
+		   f.pass.focus();
+		   return false;
+	   }
+   }
+   function win_passchg() {
+	  var op = "width=500, height=250, left=50,top=150";
+	  open("../../password/{{mem.id}}/","",op);
+   }
+</script>
+
+<form action="../../update/{{mem.id}}/" name="f" method="post"  onsubmit="return inputcheck(this)">
+{%  csrf_token  %}
+<input type="hidden" name="picture" value="{{mem.picture}}">
+<table><caption>회원 정보 수정</caption>
+<tr><td rowspan="4" valign="bottom">
+</td><th>아이디</th>
+<td><input type="text" name="id" readonly value="{{mem.id}}"></td></tr>
+<tr><th>비밀번호</th><td><input type="password" name="pass" ></td></tr>
+<tr><th>이름</th>
+<td><input type="text" name="name" value="{{mem.name}}"></td></tr>
+<tr><th>이메일</th><td colspan="2"><input type="text" name="email"
+    value="{{mem.email}}"></td></tr>
+<tr><td colspan="3"><input type="submit" value="회원수정">
+<input type="button" value="비밀번호수정" onclick="win_passchg()">
+</td></tr></table></form>
+{% endblock content %}
