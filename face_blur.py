@@ -81,7 +81,7 @@ if backend == 'haar':
         face_cascade = cv2.CascadeClassifier(detector_path)
 #------------------------
 
-cap = cv2.VideoCapture("./images/video1.MP4") #0 for webcam or video
+cap = cv2.VideoCapture("./images/video2.MP4") #0 for webcam or video
 frame = 0
 while(True):
     ret, img = cap.read()

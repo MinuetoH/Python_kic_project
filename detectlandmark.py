@@ -104,14 +104,14 @@ detector_hog = dlib.get_frontal_face_detector()
 landmark_predictor = dlib.shape_predictor\
     ('./model/shape_predictor_68_face_landmarks.dat')
 
-vc = cv2.VideoCapture('./images/video2.MP4')
-img_sticker = cv2.imread('images/pngegg (6).png')
+vc = cv2.VideoCapture('./images/vedeo2.MP4')
+img_sticker = cv2.imread('images/mouth1.jpg')
 
 vlen = int(vc.get(cv2.CAP_PROP_FRAME_COUNT))
 
 # writer 초기화
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-vw = cv2.VideoWriter('./images/result.mp4', fourcc, 30, (1280, 720))
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+vw = cv2.VideoWriter('./images/output.mp4', fourcc, 30, (1280, 720))
 
 for i in range(vlen):
     ret, img = vc.read()

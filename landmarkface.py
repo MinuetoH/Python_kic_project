@@ -53,9 +53,9 @@ def detect(gray,frame) :
 
 
 #영상 가져오기
-vc = cv2.VideoCapture('./images/video4.MP4')
+vc = cv2.VideoCapture('./images/video2.MP4')
 #스티커 가져오기
-#img_sticker = cv2.imread('images/pngegg (6)')
+#img_sticker = cv2.imread('.images/pngegg (6)')
 
 
 while True :
